@@ -36,9 +36,9 @@ public interface TrackerInterface {
     @Headers({
             "content-type: application/json",
             "x-app-id:c9a9b2dd",
-            "x-app-key:xxx"
+            "x-app-key:xxxxx"
     })
     @POST("v2/natural/exercise")
-    Call<ExerciseBase> getStringScalar(@Body ExerciseRequest query);
+    Call<Exercise> getStringScalar(@Body ExerciseRequest query);
 
 }

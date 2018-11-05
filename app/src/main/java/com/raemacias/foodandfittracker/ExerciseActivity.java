@@ -55,7 +55,7 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
     private Double height_cm;
     private Double age;
 
-    List<Exercise> mExercises;
+    List<Exercise> mExercises = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 if(!TextUtils.isEmpty(query)) {
                     loadJSON();
                 }
-                Toast.makeText(ExerciseActivity.this, "Submitted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExerciseActivity.this, "Submitte", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -109,8 +109,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
 
         TrackerInterface trackerInterface = retrofit.create(TrackerInterface.class);
 
-        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(query));
-        System.out.print(query);
+//        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(query));
+//        System.out.print(query);
+
+        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(queryET.getText().toString()));
 
         call.enqueue(new Callback<Exercise>() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -143,17 +145,18 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
             }
         });
     }
-        public void showResponse(String response) {
+    public void showResponse(String response) {
         if(mResponseTv.getVisibility() == View.GONE) {
             mResponseTv.setVisibility(View.VISIBLE);
         }
         mResponseTv.setText(response);
-        }
+    }
 
     @Override
     public void onClick(View v) {
         String query = mResponseTv.getText().toString();
         Toast.makeText(ExerciseActivity.this, "Button clicked", Toast.LENGTH_SHORT).show();
+
     }
 }
 
