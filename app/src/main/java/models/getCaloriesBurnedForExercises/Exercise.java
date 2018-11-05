@@ -16,16 +16,37 @@ import java.util.ListIterator;
 public class Exercise implements Serializable {
     //This is the result of the query
 
+    public Exercise createFromParcel(Parcel in) {
+        return new Exercise(in);
+    }
+
+    public Exercise[] newArray(int size) {
+        return (new Exercise[size]);
+    }
+
+    public Exercise(Integer tagId, String userInput, Double durationMin, Double met, Double nfCalories, String name, String description, String benefits) {
+        super();
+        this.tagId = tagId;
+        this.userInput = userInput;
+        this.durationMin = durationMin;
+        this.met = met;
+        this.nfCalories = nfCalories;
+        this.name = name;
+        this.description = description;
+        this.benefits = benefits;
+    }
+
+
     @SerializedName("tag_id")
     private int tagId;
     @SerializedName("user_input")
     private String userInput;
     @SerializedName("duration_min")
-    private float durationMin;
+    private double durationMin;
     @SerializedName("met")
-    private float met;
+    private double met;
     @SerializedName("nf_calories")
-    private float nfCalories;
+    private double nfCalories;
     @SerializedName("photo")
     private Photo photo;
     @SerializedName("compendium_code")
@@ -40,7 +61,7 @@ public class Exercise implements Serializable {
 //    private String workout;
 
 
-    public Exercise() {
+    public Exercise(Parcel in) {
 
     }
 
@@ -60,7 +81,7 @@ public class Exercise implements Serializable {
         this.userInput = userInput;
     }
 
-    public float getDurationMin() {
+    public double getDurationMin() {
         return durationMin;
     }
 
@@ -68,7 +89,7 @@ public class Exercise implements Serializable {
         this.durationMin = durationMin;
     }
 
-    public float getMet() {
+    public double getMet() {
         return met;
     }
 
@@ -76,7 +97,7 @@ public class Exercise implements Serializable {
         this.met = met;
     }
 
-    public float getNfCalories() {
+    public double getNfCalories() {
         return nfCalories;
     }
 
@@ -138,7 +159,24 @@ public class Exercise implements Serializable {
                 ", description'" + description + '\'' +
                 ", benefits'" + benefits + '\'' +
                 '}';
-
     }
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeValue(tagId);
+            dest.writeValue(userInput);
+            dest.writeValue(durationMin);
+            dest.writeValue(met);
+            dest.writeValue(nfCalories);
+            dest.writeValue(name);
+            dest.writeValue(description);
+            dest.writeValue(benefits);
+        }
+
+        public int describeContents() {
+            return 0;
+        }
+
 
 }
+
+
+
