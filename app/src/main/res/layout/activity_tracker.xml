@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
@@ -15,138 +16,173 @@
         app:titleTextColor="@color/white" />
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="364dp"
-        android:layout_height="517dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="2dp"
-        android:layout_marginStart="2dp"
-        ads:layout_constraintBottom_toBottomOf="parent"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="8dp"
+        android:visibility="visible"
+        ads:layout_constraintBottom_toTopOf="@+id/weighin"
+        ads:layout_constraintTop_toBottomOf="@+id/iv_weights"
+        tools:layout_editor_absoluteX="16dp" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/breakfast"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:paddingTop="8dp"-->
+            <!--android:clickable="true"-->
+            <!--android:focusable="true"-->
+            <!--android:background="?attr/selectableItemBackground"-->
+            <!--android:text="@string/breakfast"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:layout_below="@id/breakfast"-->
+            <!--android:background="@color/colorPrimaryDark"-->
+            <!--android:visibility="visible" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/lunch"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:layout_below="@id/breakfast"-->
+            <!--android:paddingTop="8dp"-->
+            <!--android:clickable="true"-->
+            <!--android:focusable="true"-->
+            <!--android:background="?attr/selectableItemBackground"-->
+            <!--android:text="@string/lunch"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:layout_below="@id/lunch"-->
+            <!--android:background="@color/colorPrimaryDark"-->
+            <!--android:visibility="visible" />-->
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/dinner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:layout_below="@id/lunch"-->
+            <!--android:paddingTop="8dp"-->
+            <!--android:text="@string/dinner"-->
+            <!--android:clickable="true"-->
+            <!--android:focusable="true"-->
+            <!--android:background="?attr/selectableItemBackground"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:layout_below="@id/dinner"-->
+            <!--android:background="@color/colorPrimaryDark"-->
+            <!--android:visibility="visible" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/snacks"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:layout_below="@id/dinner"-->
+            <!--android:paddingTop="8dp"-->
+            <!--android:text="@string/snacks"-->
+            <!--android:clickable="true"-->
+            <!--android:focusable="true"-->
+            <!--android:background="?attr/selectableItemBackground"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="4dp"-->
+            <!--android:layout_below="@id/snacks"-->
+            <!--android:background="@color/colorPrimaryDark"-->
+            <!--android:visibility="visible" />-->
+
+    <TextView
+        android:id="@+id/exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/exercise"
+        android:textSize="36sp"
+        ads:layout_constraintBottom_toTopOf="@+id/iv_weights"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toTopOf="@+id/toolbar">
+        ads:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_weights"
+        android:layout_width="88dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/weights"
+        ads:layout_constraintBottom_toTopOf="@+id/weighin"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/exercise" />
 
-            <View
-                android:layout_width="match_parent"
-                android:paddingTop="8dp"
-                android:layout_height="4dp"
-                android:background="@color/colorPrimaryDark"
-                android:visibility="visible" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/exercise"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintTop_toBottomOf="@+id/iv_scale"
+        tools:layout_editor_absoluteX="16dp" />
 
-            <!--<TextView-->
-                <!--android:id="@+id/breakfast"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="70dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:paddingTop="8dp"-->
-                <!--android:clickable="true"-->
-                <!--android:focusable="true"-->
-                <!--android:background="?attr/selectableItemBackground"-->
-                <!--android:text="@string/breakfast"-->
-                <!--android:textSize="20sp" />-->
+    <TextView
+        android:id="@+id/weighin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/weighin"
+        android:textSize="36sp"
+        ads:layout_constraintBottom_toTopOf="@+id/iv_scale"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/iv_weights" />
 
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:layout_below="@id/breakfast"-->
-                <!--android:background="@color/colorPrimaryDark"-->
-                <!--android:visibility="visible" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/lunch"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="70dp"-->
-                <!--android:layout_below="@id/breakfast"-->
-                <!--android:paddingTop="8dp"-->
-                <!--android:clickable="true"-->
-                <!--android:focusable="true"-->
-                <!--android:background="?attr/selectableItemBackground"-->
-                <!--android:text="@string/lunch"-->
-                <!--android:textSize="20sp" />-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:layout_below="@id/lunch"-->
-                <!--android:background="@color/colorPrimaryDark"-->
-                <!--android:visibility="visible" />-->
-
-
-            <!--<TextView-->
-                <!--android:id="@+id/dinner"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="70dp"-->
-                <!--android:layout_below="@id/lunch"-->
-                <!--android:paddingTop="8dp"-->
-                <!--android:text="@string/dinner"-->
-                <!--android:clickable="true"-->
-                <!--android:focusable="true"-->
-                <!--android:background="?attr/selectableItemBackground"-->
-                <!--android:textSize="20sp" />-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:layout_below="@id/dinner"-->
-                <!--android:background="@color/colorPrimaryDark"-->
-                <!--android:visibility="visible" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/snacks"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="70dp"-->
-                <!--android:layout_below="@id/dinner"-->
-                <!--android:paddingTop="8dp"-->
-                <!--android:text="@string/snacks"-->
-                <!--android:clickable="true"-->
-                <!--android:focusable="true"-->
-                <!--android:background="?attr/selectableItemBackground"-->
-                <!--android:textSize="20sp" />-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="4dp"-->
-                <!--android:layout_below="@id/snacks"-->
-                <!--android:background="@color/colorPrimaryDark"-->
-                <!--android:visibility="visible" />-->
-
-            <TextView
-                android:id="@+id/exercise"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="16dp"
-                android:layout_centerHorizontal="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginTop="65dp"
-                android:background="?attr/selectableItemBackground"
-                android:text="@string/exercise"
-                android:textSize="25sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_below="@id/exercise"
-                android:background="@color/colorPrimaryDark"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/weighin"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_below="@id/exercise"
-                android:padding="16dp"
-                android:text="@string/weighin"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground"
-                android:textSize="25sp" />
+    <ImageView
+        android:id="@+id/iv_scale"
+        android:layout_width="98dp"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/scale"
+        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/weighin" />
 
             <View
                 android:layout_width="match_parent"
@@ -156,22 +192,20 @@
                 android:visibility="visible" />
 
 
-        </RelativeLayout>
-
-    </android.support.v4.widget.NestedScrollView>
-
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         ads:adSize="BANNER"
         ads:adUnitId="@string/test_banner_ad"
-        ads:layout_constraintBottom_toBottomOf="@+id/scrollview"
+        ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.25"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/scrollview" />
 
