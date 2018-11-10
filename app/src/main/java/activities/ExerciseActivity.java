@@ -1,4 +1,4 @@
-package com.raemacias.foodandfittracker;
+package activities;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -16,21 +16,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
+import com.raemacias.foodandfittracker.R;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import models.getCaloriesBurnedForExercises.Exercise;
 import models.getCaloriesBurnedForExercises.ExerciseRequest;
 //import network.ApiUtils;
-import models.getCaloriesBurnedForExercises.Photo;
 import network.TrackerInterface;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -119,6 +112,7 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onResponse(@NonNull Call<Exercise> call, @NonNull Response<Exercise> response) {
                 if (response.isSuccessful()) {
+//                    mExercises = response.body().getName();
                     showResponse(response.body().toString());
 
 
