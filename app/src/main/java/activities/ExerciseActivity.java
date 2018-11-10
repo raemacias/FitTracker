@@ -116,17 +116,17 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                     showResponse(response.body().toString());
 
 
-//                response.body();
-//                int id = response.body().getTagId();
-//                String userInput = response.body().getUserInput();
+                response.body();
+                int id = response.body().getTagId();
+                String userInput = response.body().getUserInput();
 //                float durationMin = response.body().getDurationMin();
 //                float met = response.body().getMet();
 //                float nf_calories = response.body().getNfCalories();
 //                Photo photo = response.body().getPhoto();
-//                int compendium_code = response.body().getCompendiumCode();
-//                String name = response.body().getName();
-//                String description = response.body().getDescription();
-//                String benefits = response.body().getBenefits();
+                int compendium_code = response.body().getCompendiumCode();
+                String name = response.body().getName();
+                String description = response.body().getDescription();
+                String benefits = response.body().getBenefits();
 
                     Log.i(TAG, "post submitted to API" + (response.body()).toString());
 

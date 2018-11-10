@@ -10,11 +10,13 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.raemacias.foodandfittracker.R;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private FirebaseAnalytics mFirebaseAnalytics;
     private AdView mAdView;
 
     @Override
@@ -44,18 +46,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.exercise) {
+
+        if (v.getId() == R.id.exercise) {
             Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
             startActivity(intent);
-        } else if (v.getId()==R.id.weighin) {
+        } else if (v.getId() == R.id.weighin) {
             Intent in = new Intent(getApplicationContext(), WeighInActivity.class);
             startActivity(in);
 
-        }
 
+        }
     }
 }
