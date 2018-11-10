@@ -16,6 +16,7 @@ public class Weight {
     public Weight(@NonNull String weight) {
         this.mWeight = weight;
     }
+    @NonNull
     public String getWeight() {
         return this.mWeight;
     }

@@ -11,12 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp"
+        android:gravity="center"
+        android:layout_marginTop="22dp"
+        android:padding="8dp"
         android:background="@color/colorPrimaryDark"
         android:contentDescription="@string/appwidget_text"
         android:text="@string/appwidget_text"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold|italic" />
 
     <TextView
@@ -27,5 +29,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="165dp"
         android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/widget_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="224dp"
+        android:background="@color/grey"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/track_it"/>
 
 </RelativeLayout>
