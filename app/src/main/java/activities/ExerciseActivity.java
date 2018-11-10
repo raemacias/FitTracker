@@ -77,7 +77,7 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
                 if(!TextUtils.isEmpty(query)) {
                     loadJSON();
                 }
-                Toast.makeText(ExerciseActivity.this, "Submitte", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExerciseActivity.this, "Submitted.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -102,10 +102,10 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
 
         TrackerInterface trackerInterface = retrofit.create(TrackerInterface.class);
 
-//        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(query));
+        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(query));
 //        System.out.print(query);
 
-        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(queryET.getText().toString()));
+//        Call<Exercise> call = trackerInterface.getStringScalar(new ExerciseRequest(queryET.getText().toString()));
 
         call.enqueue(new Callback<Exercise>() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)

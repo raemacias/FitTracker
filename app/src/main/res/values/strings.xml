@@ -12,12 +12,15 @@
     <string name="test_banner_ad">ca-app-pub-3940256099942544/6300978111</string>
     <string name="search">search</string>
     <string name="hint_workout">hint workout</string>
-    <string name="action_submit">submit</string>
+    <string name="action_submit">Submit</string>
     <string name="title_enter_post">Workout</string>
     <string name="hint_duration">duration</string>
 
     <string name="hint_word">Weight amount...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Weight not saved because it is empty.</string>
+    <string name="appwidget_text">Fit Widget</string>
+    <string name="add_widget">Fit Widget</string>
+    <string name="widget_weight">Weight</string>
 
 </resources>
