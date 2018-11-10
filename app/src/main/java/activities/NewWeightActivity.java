@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.raemacias.foodandfittracker.R;
 
 public class NewWeightActivity extends AppCompatActivity {
-    public static final String EXTRA_REPLY = "com.example.android.wordlistsql.REPLY";
+    public static final String EXTRA_REPLY = "com.raemacias.foodandfittracker.REPLY";
 
     private EditText mEditText;
 
