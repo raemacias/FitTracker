@@ -1,4 +1,4 @@
-package com.raemacias.foodandfittracker;
+package activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +10,10 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.raemacias.foodandfittracker.R;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AdView mAdView;
 
@@ -28,17 +29,9 @@ public class MainActivity extends AppCompatActivity  {
         //Implement butterknife here
 
         TextView exercise = findViewById(R.id.exercise);
-
-        exercise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ExerciseActivity.class);
-                startActivity(intent);
-            }
-
-        });
-
-
+        exercise.setOnClickListener(this);
+        TextView weighin = findViewById(R.id.weighin);
+        weighin.setOnClickListener(this);
 
 //        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
         //To show banner ads
@@ -50,6 +43,19 @@ public class MainActivity extends AppCompatActivity  {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.exercise) {
+            Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+            startActivity(intent);
+        } else if (v.getId()==R.id.weighin) {
+            Intent in = new Intent(getApplicationContext(), WeighInActivity.class);
+            startActivity(in);
+
+        }
 
     }
 }
