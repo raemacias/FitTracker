@@ -1,4 +1,4 @@
-# Food and Fit Tracker
+# Fit Tracker
 
 This app requires your own API key which can be provided by https://www.nutritionix.com.
 
