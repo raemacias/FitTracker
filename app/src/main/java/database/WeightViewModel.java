@@ -18,7 +18,7 @@ public class WeightViewModel extends AndroidViewModel {
         mAllWeights = mRepository.getAllWeights();
     }
 
-    //this getter methos completely hides the implementation from the ui
+    //this getter method completely hides the implementation from the ui
     public LiveData<List<Weight>> getAllWeights() {
         return mAllWeights;
     }

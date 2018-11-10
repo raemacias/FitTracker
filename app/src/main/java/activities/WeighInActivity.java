@@ -1,8 +1,12 @@
 package activities;
 
+import android.appwidget.AppWidgetManager;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -21,12 +25,14 @@ import java.util.List;
 import adapters.WeightListAdapter;
 import database.Weight;
 import database.WeightViewModel;
+import widget.FitWidget;
 
 public class WeighInActivity extends AppCompatActivity {
 
     public static final int NEW_WEIGHT_ACTIVITY_REQUEST_CODE = 1;
 
     private WeightViewModel mWeightViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,7 @@ public class WeighInActivity extends AppCompatActivity {
 //        if (actionBar != null) {
 //            actionBar.setDisplayHomeAsUpEnabled(true);
 //        }
+
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final WeightListAdapter adapter = new WeightListAdapter(this);

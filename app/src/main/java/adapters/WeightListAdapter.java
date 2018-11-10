@@ -1,6 +1,7 @@
 package adapters;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,14 +30,15 @@ public class WeightListAdapter extends RecyclerView.Adapter<WeightListAdapter.We
 
     public WeightListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
+    @NonNull
     @Override
-    public WeightViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public WeightViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
         return new WeightViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(WeightViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WeightViewHolder holder, int position) {
         if (mWeights != null) {
             Weight current = mWeights.get(position);
             holder.weightItemView.setText(current.getWeight());
@@ -52,7 +54,7 @@ public class WeightListAdapter extends RecyclerView.Adapter<WeightListAdapter.We
     }
 
     // getItemCount() is called many times, and when it is first called,
-    // mWords has not been updated (means initially, it's null, and we can't return null).
+    // mWeights has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount() {
         if (mWeights != null)
