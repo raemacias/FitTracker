@@ -20,7 +20,9 @@ public abstract class WeightRoomDatabase extends RoomDatabase {
                 //Create database here
                 INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                         WeightRoomDatabase.class, "weight_database")
-                        .addCallback(sRoomDatabaseCallback)
+
+                        //this will wipe out data if active
+//                        .addCallback(sRoomDatabaseCallback)
                         .build();
             }
         }
