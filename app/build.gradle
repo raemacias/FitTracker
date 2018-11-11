@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'key0'
-            keyPassword 'myKeyPassword'
-            storeFile file('MyKeystore.jks')
-            storePassword 'myKeyStorePassword'
+            keyPassword 'password'
+            storeFile file('/Users/rae/Downloads/FoodandFitTracker/app/keystore')
+            storePassword 'password'
         }
     }
     compileSdkVersion 27

@@ -44,7 +44,7 @@ public class WeightListAdapter extends RecyclerView.Adapter<WeightListAdapter.We
             holder.weightItemView.setText(current.getWeight());
         } else {
             // Covers the case of data not being ready yet.
-            holder.weightItemView.setText("No weight added.");
+            holder.weightItemView.setText(R.string.no_weight_added);
         }
     }
 
