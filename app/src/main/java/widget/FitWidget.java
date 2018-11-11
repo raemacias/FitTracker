@@ -29,8 +29,8 @@ public class FitWidget extends AppWidgetProvider {
         // Instruct the widget manager to update the widget
 //        appWidgetManager.updateAppWidget(appWidgetId, views);
 
-        SharedPreferences myPrefs = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE);
-        String mWeight = myPrefs.getString(context.getString(R.string.appwidget_text), "Fit Widget \nTrack Weight Now");
+        SharedPreferences myPrefs = context.getSharedPreferences(context.getString(R.string.appwidget_name), Context.MODE_PRIVATE);
+        String mWeight = myPrefs.getString(context.getString(R.string.appwidget_text), "Fit Widget \nTrack Weight Now!");
 
         Intent intent = new Intent(context, WeighInActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
@@ -66,7 +66,7 @@ public class FitWidget extends AppWidgetProvider {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // called when the user selects a recipe in the app, to update the widget accordingly
+        // called when the user adds a weigh-in in the app, to update the widget accordingly
         ComponentName fitWidget = new ComponentName(context.getPackageName(), FitWidget.class.getName());
         int[] appWidgetIds = AppWidgetManager.getInstance(context).getAppWidgetIds(fitWidget);
         onUpdate(context, AppWidgetManager.getInstance(context), appWidgetIds);
