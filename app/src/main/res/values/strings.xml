@@ -13,8 +13,8 @@
     <string name="hint_word">Weight amount...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Weight not saved because it is empty.</string>
-    <string name="appwidget_text">Fit Widget \nTrack Weight Now!</string>
-    <string name="widget_weight">Weight</string>
+    <string name="appwidget_text">Your current weight:</string>
+    <string name="widget_weight">Latest Weight Results</string>
     <string name="track_it">Track It</string>
     <string name="no_weight_added">No weight added.</string>
     <string name="search">Search</string>

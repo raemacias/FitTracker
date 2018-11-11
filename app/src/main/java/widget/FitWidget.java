@@ -11,34 +11,32 @@ import android.widget.RemoteViews;
 
 import com.raemacias.foodandfittracker.R;
 
+import activities.NewWeightActivity;
 import activities.WeighInActivity;
+import database.Weight;
 
 /**
  * Implementation of App Widget functionality.
  */
 public class FitWidget extends AppWidgetProvider {
 
+
+    private static String mWeight;
+
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
-
-//        CharSequence widgetText = context.getString(R.string.appwidget_text);
-        // Construct the RemoteViews object
-//        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.fit_widget);
-//        views.setTextViewText(R.id.widget_button, widgetText);
-
-        // Instruct the widget manager to update the widget
-//        appWidgetManager.updateAppWidget(appWidgetId, views);
-
+        
         SharedPreferences myPrefs = context.getSharedPreferences(context.getString(R.string.appwidget_name), Context.MODE_PRIVATE);
-        String mWeight = myPrefs.getString(context.getString(R.string.appwidget_text), "Fit Widget \nTrack Weight Now!");
+        String weights = myPrefs.getString(context.getString(R.string.widget_weight), "Current weight.");
 
         Intent intent = new Intent(context, WeighInActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.fit_widget);
+        views.setTextViewText(R.id.widget_weight, weights);
         views.setOnClickPendingIntent(R.id.widget_layout, pendingIntent);
 
-        views.setTextViewText(R.id.appwidget_text, mWeight);
+//        views.setTextViewText(R.id.appwidget_text, mWeight);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
 
@@ -49,8 +47,6 @@ public class FitWidget extends AppWidgetProvider {
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
-
-
         }
     }
 

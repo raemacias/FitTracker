@@ -20,4 +20,8 @@ public class Weight {
     public String getWeight() {
         return this.mWeight;
     }
+
+    public static String weightsToString(String weight) {
+        return weight;
+    }
 }
