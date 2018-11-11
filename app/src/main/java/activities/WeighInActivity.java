@@ -42,13 +42,6 @@ public class WeighInActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Show the Up button in the action bar.
-//        ActionBar actionBar = getSupportActionBar();
-//        if (actionBar != null) {
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
-
-
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final WeightListAdapter adapter = new WeightListAdapter(this);
         recyclerView.setAdapter(adapter);

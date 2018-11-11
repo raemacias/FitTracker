@@ -108,8 +108,8 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onResponse(@NonNull Call<Exercise> call, @NonNull Response<Exercise> response) {
-                if (response.isSuccessful()) {
-                    showResponse(response.body().toString());
+                if (response.message().contentEquals("OK")) {
+                        showResponse(response.body().toString());
 
 
                 response.body();
@@ -145,7 +145,7 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         String query = mResponseTv.getText().toString();
-        Toast.makeText(ExerciseActivity.this, "Button clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ExerciseActivity.this, R.string.button_clicked, Toast.LENGTH_SHORT).show();
 
     }
 }
