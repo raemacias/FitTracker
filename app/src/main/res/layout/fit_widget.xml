@@ -12,13 +12,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="22dp"
         android:padding="8dp"
         android:background="@color/colorPrimaryDark"
         android:contentDescription="@string/appwidget_text"
         android:text="@string/appwidget_text"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="bold|italic" />
 
     <TextView
@@ -27,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:text="@string/widget_weight"
         android:layout_marginTop="165dp"
         android:textColor="@color/white" />
 
