@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class WeighInActivity extends AppCompatActivity {
     public static final int NEW_WEIGHT_ACTIVITY_REQUEST_CODE = 1;
 
     private WeightViewModel mWeightViewModel;
+    public Weight mWeight;
 
 
     @Override
@@ -41,6 +43,23 @@ public class WeighInActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        SharedPreferences myPrefs;
+
+        //This came from the tutorial at https://appsandbiscuits.com/saving-data-with-sharedpreferences-android-9-9fecae19896a
+        myPrefs = getSharedPreferences (getString(R.string.appwidget_name), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = myPrefs.edit();
+
+        editor.putString();
+        editor.apply();
+        editor.commit();
+
+        //This code came from https://stackoverflow.com/questions/3455123/programmatically-update-widget-from-activity-service-receiver
+        Intent intent = new Intent(this, FitWidget.class);
+        intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
+        int ids[] = AppWidgetManager.getInstance(getApplication()).getAppWidgetIds(new ComponentName(getApplication(), FitWidget.class));
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
+        sendBroadcast(intent);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final WeightListAdapter adapter = new WeightListAdapter(this);
