@@ -10,18 +10,16 @@ import android.content.SharedPreferences;
 import android.widget.RemoteViews;
 
 import com.raemacias.foodandfittracker.R;
-
-import activities.NewWeightActivity;
 import activities.WeighInActivity;
-import database.Weight;
 
 /**
  * Implementation of App Widget functionality.
  */
 public class FitWidget extends AppWidgetProvider {
 
+    private static CharSequence name;
 
-    private static String mWeight;
+
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
@@ -33,6 +31,7 @@ public class FitWidget extends AppWidgetProvider {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.fit_widget);
+//        views.setTextViewText(R.id.appwidget_text, name);
         views.setTextViewText(R.id.widget_weight, weights);
         views.setOnClickPendingIntent(R.id.widget_layout, pendingIntent);
 
