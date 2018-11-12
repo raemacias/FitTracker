@@ -21,5 +21,6 @@
     <string name="floating_action_button">floating action button</string>
     <string name="button_clicked">Button clicked.</string>
     <string name="appwidget_name">Fit Widget</string>
+    <string name="weighin_text">Add current weight for this week:</string>
 
 </resources>

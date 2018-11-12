@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        TextView exercise = findViewById(R.id.exercise);
-        exercise.setOnClickListener(this);
         TextView weighin = findViewById(R.id.weighin);
         weighin.setOnClickListener(this);
 
@@ -51,12 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.exercise) {
-            Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+        if (v.getId() == R.id.weighin) {
+            Intent intent = new Intent(getApplicationContext(), WeighInActivity.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.weighin) {
-            Intent in = new Intent(getApplicationContext(), WeighInActivity.class);
-            startActivity(in);
+//
         }
     }
 }

@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="activities.ExerciseActivity" />
         <activity android:name="activities.WeighInActivity" />
         <activity android:name="activities.NewWeightActivity" />
 
