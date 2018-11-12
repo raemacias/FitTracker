@@ -28,14 +28,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        //Implement butterknife here
-
         TextView exercise = findViewById(R.id.exercise);
         exercise.setOnClickListener(this);
         TextView weighin = findViewById(R.id.weighin);
         weighin.setOnClickListener(this);
 
-//        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        //MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
         //To show banner ads
         AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
@@ -48,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
     }
 
     @Override
@@ -60,8 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.weighin) {
             Intent in = new Intent(getApplicationContext(), WeighInActivity.class);
             startActivity(in);
-
-
         }
     }
 }

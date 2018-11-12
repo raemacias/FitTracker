@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:padding="8dp"
         android:background="@color/colorPrimaryDark"
         android:contentDescription="@string/appwidget_text"
+        android:gravity="center"
+        android:padding="8dp"
         android:text="@string/appwidget_text"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -24,21 +24,10 @@
         android:id="@+id/widget_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/appwidget_text"
         android:layout_centerHorizontal="true"
         android:text="@string/widget_weight"
-        android:layout_marginTop="165dp"
+        android:textSize="20sp"
         android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/widget_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="224dp"
-        android:background="@color/grey"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="@string/track_it"/>
 
 </RelativeLayout>

@@ -27,24 +27,6 @@ public class NewWeightActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_weight);
         mEditText = findViewById(R.id.edit_weight);
 
-//        SharedPreferences myPrefs;
-//
-//        //This came from the tutorial at https://appsandbiscuits.com/saving-data-with-sharedpreferences-android-9-9fecae19896a
-//        myPrefs = getSharedPreferences (getString(R.string.appwidget_name), Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = myPrefs.edit();
-//
-//        editor.putString(getString(R.string.widget_weight), getIntent().toString());
-//        editor.commit();
-//
-//        //This code came from https://stackoverflow.com/questions/3455123/programmatically-update-widget-from-activity-service-receiver
-//        Intent intent = new Intent(this, FitWidget.class);
-//        intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
-//        int ids[] = AppWidgetManager.getInstance(getApplication()).getAppWidgetIds(new ComponentName(getApplication(), FitWidget.class));
-//        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
-//        sendBroadcast(intent);
-
-
-
         final Button button = findViewById(R.id.button_save);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -70,7 +52,6 @@ public class NewWeightActivity extends AppCompatActivity {
                     sendBroadcast(intent);
                     replyIntent.putExtra(EXTRA_REPLY, word);
                     setResult(RESULT_OK, replyIntent);
-
                 }
                 finish();
             }

@@ -31,10 +31,8 @@ import widget.FitWidget;
 public class WeighInActivity extends AppCompatActivity {
 
     public static final int NEW_WEIGHT_ACTIVITY_REQUEST_CODE = 1;
-
     private WeightViewModel mWeightViewModel;
     String mWeight;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
